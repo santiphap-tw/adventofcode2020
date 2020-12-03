@@ -17,3 +17,15 @@ export const ReadFileToArray = async (path) => {
     });
   return content;
 };
+
+export const ReadFilesToText = async (files) => {
+  return await Promise.all(
+    files.map(async (file) => await ReadFileToText(file))
+  );
+};
+
+export const ReadFilesToArray = async (files) => {
+  return await Promise.all(
+    files.map(async (file) => await ReadFileToArray(file))
+  );
+};

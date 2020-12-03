@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Empty, Fail, Pass } from "../Status/Status";
 import CustomRunPopup from "../CustomRun/CustomRunModal";
+import {
+  ReadFilesToArray,
+  ReadFilesToText,
+} from "../../utils/io/ReadFileToText";
 
 const Problem = (props) => {
   const name = props.name;
@@ -10,7 +14,7 @@ const Problem = (props) => {
   const [popup, setPopup] = useState(<div />);
 
   const showCustomRun = async () => {
-    const input = await solution.part1.input;
+    const input = await ReadFilesToArray(solution.part1.input);
     setPopup(
       <CustomRunPopup
         show={true}
@@ -31,8 +35,8 @@ const Problem = (props) => {
       setResult1(null);
       setResult2(null);
       const execute = async (prob) => {
-        const input = await prob.input;
-        const output = await prob.output;
+        const input = await ReadFilesToArray(prob.input);
+        const output = await ReadFilesToText(prob.output);
         const fn = prob.solution;
         for (const index in output) {
           if (fn(input[index]).toString() !== output[index]) {

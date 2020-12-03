@@ -1,4 +1,3 @@
-import { ReadFileToArray, ReadFileToText } from "../../utils/io/ReadFileToText";
 import input01 from "./case01/input.txt";
 import input02 from "./case02/input.txt";
 import output01Part1 from "./case01/output.part1.txt";
@@ -33,34 +32,16 @@ const part2 = (input) => {
   }
 };
 
-const getInput = async () => {
-  return [await ReadFileToArray(input01), await ReadFileToArray(input02)];
-};
-
-const getOutputPart1 = async () => {
-  return [
-    await ReadFileToText(output01Part1),
-    await ReadFileToText(output02Part1),
-  ];
-};
-
-const getOutputPart2 = async () => {
-  return [
-    await ReadFileToText(output01Part2),
-    await ReadFileToText(output02Part2),
-  ];
-};
-
 const Solution = {
   part1: {
     solution: part1,
-    input: getInput(),
-    output: getOutputPart1(),
+    input: [input01, input02],
+    output: [output01Part1, output02Part1],
   },
   part2: {
     solution: part2,
-    input: getInput(),
-    output: getOutputPart2(),
+    input: [input01, input02],
+    output: [output01Part2, output02Part2],
   },
 };
 
