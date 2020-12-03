@@ -7,13 +7,11 @@ import output01Part2 from "./case01/output.part2.txt";
 import output02Part2 from "./case02/output.part2.txt";
 
 const part1 = (input) => {
-  const result = parseInt(input[0]) + parseInt(input[1]);
-  return result.toString();
+  // Your part 1 solution
 };
 
 const part2 = (input) => {
-  const result = parseInt(input[0]) * parseInt(input[1]);
-  return result.toString();
+  // Your part 2 solution
 };
 
 const getInput = async () => {
