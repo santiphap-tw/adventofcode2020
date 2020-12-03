@@ -1,10 +1,10 @@
 import { ReadFileToArray, ReadFileToText } from "../../utils/io/ReadFileToText";
-import input01 from "./input.01.txt";
-import input02 from "./input.02.txt";
-import outputPart101 from "./output.part1.01.txt";
-import outputPart102 from "./output.part1.02.txt";
-import outputPart201 from "./output.part2.01.txt";
-import outputPart202 from "./output.part2.02.txt";
+import input01 from "./case01/input.txt";
+import input02 from "./case02/input.txt";
+import output01Part1 from "./case01/output.part1.txt";
+import output02Part1 from "./case02/output.part1.txt";
+import output01Part2 from "./case01/output.part2.txt";
+import output02Part2 from "./case02/output.part2.txt";
 
 const part1 = (input) => {
   let countValid = 0;
@@ -46,15 +46,15 @@ const getInput = async () => {
 
 const getOutputPart1 = async () => {
   return [
-    await ReadFileToText(outputPart101),
-    await ReadFileToText(outputPart102),
+    await ReadFileToText(output01Part1),
+    await ReadFileToText(output02Part1),
   ];
 };
 
 const getOutputPart2 = async () => {
   return [
-    await ReadFileToText(outputPart201),
-    await ReadFileToText(outputPart202),
+    await ReadFileToText(output01Part2),
+    await ReadFileToText(output02Part2),
   ];
 };
 
