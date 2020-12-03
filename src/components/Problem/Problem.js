@@ -61,7 +61,7 @@ const Problem = (props) => {
       </td>
       <td className="align-middle">
         <button
-          className="btn btn-outline-primary border-0 m-1"
+          className="btn btn-outline-success border-0 m-1"
           onClick={showCustomRun}
         >
           <i className="material-icons-round align-middle mx-auto">

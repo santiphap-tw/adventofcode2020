@@ -5,6 +5,7 @@ import "./material_icons.css";
 import Home from "./pages/Home/Home";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import "./bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
