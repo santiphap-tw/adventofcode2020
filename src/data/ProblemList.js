@@ -1,8 +1,8 @@
+import SampleSolution from "../solutions/00_sample/Solution";
+
 export default [
   {
-    name: "01_Report_Repair",
-  },
-  {
-    name: "02_Password_Philosophy",
+    name: "00_Sample",
+    solution: SampleSolution,
   },
 ];

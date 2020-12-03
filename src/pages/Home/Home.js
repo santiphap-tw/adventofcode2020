@@ -10,7 +10,11 @@ export default () => {
         <p className="h1 bg-light p-5">Advent of Code 2020</p>
         <div className="row m-0">
           {problemList.map((problem) => (
-            <Problem name={problem.name} />
+            <Problem
+              key={problem.name}
+              name={problem.name}
+              solution={problem.solution}
+            />
           ))}
         </div>
       </div>
