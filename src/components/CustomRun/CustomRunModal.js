@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from "bootstrap";
+import "./CustomRunModal.css";
 
 const CustomRunPopup = (props) => {
   const onClose = props.onClose;
