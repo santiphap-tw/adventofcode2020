@@ -8,15 +8,24 @@ export default () => {
     <div>
       <div className="container p-0 text-center">
         <p className="h1 bg-light p-5">Advent of Code 2020</p>
-        <div className="row m-0">
-          {problemList.map((problem) => (
-            <Problem
-              key={problem.name}
-              name={problem.name}
-              solution={problem.solution}
-            />
-          ))}
-        </div>
+        <table className="table table-hover table-borderless">
+          <thead>
+            <tr className="table-bordered">
+              <th className="text-center">Name</th>
+              <th className="text-center">Status</th>
+              <th className="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {problemList.map((problem) => (
+              <Problem
+                key={problem.name}
+                name={problem.name}
+                solution={problem.solution}
+              />
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -28,26 +28,22 @@ const Problem = (props) => {
   run();
 
   return (
-    <div className="col-12 col-lg-3 col-md-6">
-      <div className="card m-1">
-        <p className="card-header">
-          <p className="fw-bolder d-inline">{name}</p>
-          <p className="mx-1 d-inline">
-            {result1 === null && <Empty />}
-            {result1 === true && <Pass />}
-            {result1 === false && <Fail />}/{result2 === null && <Empty />}
-            {result2 === true && <Pass />}
-            {result2 === false && <Fail />}
-          </p>
-        </p>
-        <div className="card-body">
-          <button className="btn btn-primary m-1" onClick={run}>
-            Run
-          </button>
-          <button className="btn btn-primary m-1">Custom Run</button>
-        </div>
-      </div>
-    </div>
+    <tr className="table-bordered border-left-0 border-right-0">
+      <td className="align-middle">{name}</td>
+      <td className="align-middle">
+        {result1 === null && <Empty />}
+        {result1 === true && <Pass />}
+        {result1 === false && <Fail />}/{result2 === null && <Empty />}
+        {result2 === true && <Pass />}
+        {result2 === false && <Fail />}
+      </td>
+      <td className="align-middle">
+        <button className="btn btn-primary m-1" onClick={run}>
+          Run
+        </button>
+        <button className="btn btn-primary m-1">Custom Run</button>
+      </td>
+    </tr>
   );
 };
 
