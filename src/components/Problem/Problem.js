@@ -17,7 +17,7 @@ const Problem = (props) => {
       const output = await prob.output;
       const fn = prob.solution;
       for (const index in output) {
-        if (fn(input[index]) !== output[index]) {
+        if (fn(input[index]).toString() !== output[index]) {
           return false;
         }
       }

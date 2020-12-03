@@ -28,8 +28,16 @@ const CustomRunPopup = (props) => {
   const [output2, setOutput2] = useState("");
   const [input, setInput] = useState("");
   const run = () => {
-    setOutput1(solution.part1(input.split("\n")));
-    setOutput2(solution.part2(input.split("\n")));
+    let result1 = "Invalid Input";
+    let result2 = "Invalid Input";
+    try {
+      result1 = solution.part1(input.split("\n"));
+    } catch (e) {}
+    try {
+      result2 = solution.part2(input.split("\n"));
+    } catch (e) {}
+    setOutput1(result1);
+    setOutput2(result2);
   };
   return (
     <div className="modal fade">
