@@ -31,7 +31,7 @@ const part2 = (input) => {
     const pos2 = parseInt(rule.split(" ")[0].split("-")[1]) - 1;
     const password = entry.split(":")[1].trim();
     if (
-      (password.charAt(pos1) === target) !=
+      (password.charAt(pos1) === target) !==
       (password.charAt(pos2) === target)
     ) {
       countValid++;

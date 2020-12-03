@@ -1,11 +1,9 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Button, Modal } from "bootstrap";
-require("popper.js");
+import React, { useEffect, useState } from "react";
+import { Modal } from "bootstrap";
 
 const CustomRunPopup = (props) => {
   const onClose = props.onClose;
   const [modal, setModal] = useState();
-  const closePopup = useCallback(() => modal?.hide(), [modal]);
   useEffect(() => {
     const popupElement = document.querySelector(".modal");
     if (popupElement) {
@@ -44,6 +42,7 @@ const CustomRunPopup = (props) => {
             <div className="d-flex justify-content-center">
               {sampleInputs.map((sampleInput, index) => (
                 <button
+                  key={index}
                   type="button"
                   className="btn btn-outline-primary border-0 m-1"
                   onClick={() => setInput(sampleInput.join("\n"))}

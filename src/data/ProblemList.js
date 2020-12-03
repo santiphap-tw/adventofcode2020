@@ -2,7 +2,7 @@ import SampleSolution from "../solutions/00_sample/Solution";
 import ReportRepairSolution from "../solutions/01_report_repair/Solution";
 import PasswordPhilosophySolution from "../solutions/02_password_philosophy/Solution";
 
-export default [
+const problemList = [
   {
     name: "00_Sample",
     solution: SampleSolution,
@@ -16,3 +16,5 @@ export default [
     solution: PasswordPhilosophySolution,
   },
 ];
+
+export default problemList;

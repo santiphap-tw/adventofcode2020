@@ -2,7 +2,7 @@ import React from "react";
 import Problem from "../../components/Problem/Problem";
 import ProblemList from "../../data/ProblemList";
 
-export default () => {
+const Home = () => {
   const problemList = ProblemList;
   return (
     <div>
@@ -30,3 +30,5 @@ export default () => {
     </div>
   );
 };
+
+export default Home;
