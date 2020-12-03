@@ -70,7 +70,7 @@ const CustomRunPopup = (props) => {
             <div className="input-group w-100 my-1">
               <span className="input-group-text">Input</span>
               <textarea
-                className="form-control"
+                className="form-control bg-light"
                 aria-label="Input"
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
@@ -80,7 +80,7 @@ const CustomRunPopup = (props) => {
             <div className="input-group w-100 my-1">
               <span className="input-group-text">Output Part 1</span>
               <textarea
-                className="form-control"
+                className="form-control bg-light"
                 aria-label="Output Part 1"
                 disabled
                 value={output1}
@@ -90,7 +90,7 @@ const CustomRunPopup = (props) => {
             <div className="input-group w-100 my-1">
               <span className="input-group-text">Output Part 2</span>
               <textarea
-                className="form-control"
+                className="form-control bg-light"
                 aria-label="Output Part 2"
                 disabled
                 value={output2}
