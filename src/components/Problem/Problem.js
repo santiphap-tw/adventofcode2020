@@ -9,26 +9,6 @@ const Problem = (props) => {
   const [result2, setResult2] = useState(null);
   const [popup, setPopup] = useState(<div />);
 
-  const run = async () => {
-    setResult1(null);
-    setResult2(null);
-    const execute = async (prob) => {
-      const input = await prob.input;
-      const output = await prob.output;
-      const fn = prob.solution;
-      for (const index in output) {
-        if (fn(input[index]).toString() !== output[index]) {
-          return false;
-        }
-      }
-      return true;
-    };
-    const result1 = await execute(solution.part1);
-    const result2 = await execute(solution.part2);
-    setResult1(result1);
-    setResult2(result2);
-  };
-
   const showCustomRun = async () => {
     const input = await solution.part1.input;
     setPopup(
@@ -46,9 +26,28 @@ const Problem = (props) => {
     );
   };
 
-  useEffect(async () => {
-    await run();
-  }, []);
+  useEffect(() => {
+    async function run() {
+      setResult1(null);
+      setResult2(null);
+      const execute = async (prob) => {
+        const input = await prob.input;
+        const output = await prob.output;
+        const fn = prob.solution;
+        for (const index in output) {
+          if (fn(input[index]).toString() !== output[index]) {
+            return false;
+          }
+        }
+        return true;
+      };
+      const result1 = await execute(solution.part1);
+      const result2 = await execute(solution.part2);
+      setResult1(result1);
+      setResult2(result2);
+    }
+    run();
+  }, [solution]);
 
   return (
     <tr className="table-bordered border-left-0 border-right-0">
