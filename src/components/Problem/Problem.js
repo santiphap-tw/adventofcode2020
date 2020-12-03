@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Empty, Fail, Pass } from "../Status/Status";
+import CustomRunPopup from "../CustomRun/CustomRunModal";
 
 const Problem = (props) => {
   const name = props.name;
   const solution = props.solution;
   const [result1, setResult1] = useState(null);
   const [result2, setResult2] = useState(null);
+  const [popup, setPopup] = useState(<div />);
 
   const run = async () => {
+    setResult1(null);
+    setResult2(null);
     const execute = async (prob) => {
       const input = await prob.input;
       const output = await prob.output;
@@ -25,7 +29,26 @@ const Problem = (props) => {
     setResult2(result2);
   };
 
-  run();
+  const showCustomRun = async () => {
+    const input = await solution.part1.input;
+    setPopup(
+      <CustomRunPopup
+        show={true}
+        onClose={() => setPopup(<div />)}
+        data={{
+          input: input,
+          solution: {
+            part1: solution.part1.solution,
+            part2: solution.part2.solution,
+          },
+        }}
+      />
+    );
+  };
+
+  useEffect(async () => {
+    await run();
+  }, []);
 
   return (
     <tr className="table-bordered border-left-0 border-right-0">
@@ -38,10 +61,15 @@ const Problem = (props) => {
         {result2 === false && <Fail />}
       </td>
       <td className="align-middle">
-        <button className="btn btn-primary m-1" onClick={run}>
-          Run
+        <button
+          className="btn btn-outline-primary border-0 m-1"
+          onClick={showCustomRun}
+        >
+          <i className="material-icons-round align-middle mx-auto">
+            play_circle_filled
+          </i>
         </button>
-        <button className="btn btn-primary m-1">Custom Run</button>
+        {popup}
       </td>
     </tr>
   );
