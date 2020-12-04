@@ -7,10 +7,12 @@ import output02Part2 from "./case02/output.part2.txt";
 
 const part1 = (input) => {
   // Your part 1 solution
+  return 0;
 };
 
 const part2 = (input) => {
   // Your part 2 solution
+  return 0;
 };
 
 const Solution = {
