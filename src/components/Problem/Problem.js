@@ -9,8 +9,8 @@ import {
 const Problem = (props) => {
   const name = props.name;
   const solution = props.solution;
-  const [result1, setResult1] = useState(null);
-  const [result2, setResult2] = useState(null);
+  const [result1, setResult1] = useState([]);
+  const [result2, setResult2] = useState([]);
   const [popup, setPopup] = useState(<div />);
 
   const showCustomRun = async () => {
@@ -37,15 +37,17 @@ const Problem = (props) => {
       const execute = async (prob) => {
         const input = await ReadFilesToArray(prob.input);
         const output = await ReadFilesToText(prob.output);
+        let result = [];
         if (output.filter((o) => o.trim() !== "").length === 0) return null;
         const fn = prob.solution;
         for (const index in output) {
-          if (output[index].trim() === "") continue;
-          if (fn(input[index]).toString() !== output[index]) {
-            return false;
-          }
+          if (output[index].trim() === "") {
+            result.push(<Empty />);
+          } else if (fn(input[index]).toString() === output[index]) {
+            result.push(<Pass />);
+          } else result.push(<Fail />);
         }
-        return true;
+        return result;
       };
       const result1 = await execute(solution.part1);
       const result2 = await execute(solution.part2);
@@ -59,11 +61,7 @@ const Problem = (props) => {
     <tr className="table-bordered border-left-0 border-right-0">
       <td className="align-middle">{name}</td>
       <td className="align-middle">
-        {result1 === null && <Empty />}
-        {result1 === true && <Pass />}
-        {result1 === false && <Fail />}/{result2 === null && <Empty />}
-        {result2 === true && <Pass />}
-        {result2 === false && <Fail />}
+        {result1}/{result2}
       </td>
       <td className="align-middle">
         <button
