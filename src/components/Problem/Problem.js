@@ -42,10 +42,31 @@ const Problem = (props) => {
         const fn = prob.solution;
         for (const index in output) {
           if (output[index].trim() === "") {
-            result.push(<Empty />);
+            result.push(
+              <Empty
+                key={prob.output + index}
+                message={"result: " + fn(input[index]).toString()}
+              />
+            );
           } else if (fn(input[index]).toString() === output[index]) {
-            result.push(<Pass />);
-          } else result.push(<Fail />);
+            result.push(
+              <Pass
+                key={prob.output + index}
+                message={"result: " + output[index]}
+              />
+            );
+          } else
+            result.push(
+              <Fail
+                key={prob.output + index}
+                message={
+                  "expected: " +
+                  output[index] +
+                  " | got: " +
+                  fn(input[index]).toString()
+                }
+              />
+            );
         }
         return result;
       };
