@@ -37,8 +37,10 @@ const Problem = (props) => {
       const execute = async (prob) => {
         const input = await ReadFilesToArray(prob.input);
         const output = await ReadFilesToText(prob.output);
+        if (output.filter((o) => o.trim() !== "").length === 0) return null;
         const fn = prob.solution;
         for (const index in output) {
+          if (output[index].trim() === "") continue;
           if (fn(input[index]).toString() !== output[index]) {
             return false;
           }
