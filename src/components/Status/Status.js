@@ -1,13 +1,16 @@
 import { Tooltip } from "bootstrap";
+import { useEffect } from "react";
 
 export const Pass = (props) => {
   const message = props.message;
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-toggle="tooltip"]')
-  );
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new Tooltip(tooltipTriggerEl);
-  });
+  useEffect(() => {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-toggle="tooltip"]')
+    );
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new Tooltip(tooltipTriggerEl);
+    });
+  }, []);
   return (
     <i
       className="material-icons-round align-middle text-primary mx-auto"
@@ -21,12 +24,14 @@ export const Pass = (props) => {
 };
 export const Fail = (props) => {
   const message = props.message;
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-toggle="tooltip"]')
-  );
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new Tooltip(tooltipTriggerEl);
-  });
+  useEffect(() => {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-toggle="tooltip"]')
+    );
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new Tooltip(tooltipTriggerEl);
+    });
+  }, []);
   return (
     <i
       className="material-icons-round align-middle text-danger mx-auto"
@@ -40,12 +45,14 @@ export const Fail = (props) => {
 };
 export const Empty = (props) => {
   const message = props.message;
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-toggle="tooltip"]')
-  );
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new Tooltip(tooltipTriggerEl);
-  });
+  useEffect(() => {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-toggle="tooltip"]')
+    );
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new Tooltip(tooltipTriggerEl);
+    });
+  }, []);
   return (
     <i
       className="material-icons-outlined align-middle text-muted mx-auto"
