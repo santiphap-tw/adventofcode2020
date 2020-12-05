@@ -2,6 +2,7 @@ import ReportRepairSolution from "../solutions/01_report_repair/Solution";
 import PasswordPhilosophySolution from "../solutions/02_password_philosophy/Solution";
 import TobogganTrajectorySolution from "../solutions/03_toboggan_trajectory/Solution";
 import PassportProcessingSolution from "../solutions/04_passport_processing/Solution";
+import BinaryBoardingSolution from "../solutions/05_binary_boarding/Solution";
 
 const problemList = [
   {
@@ -19,6 +20,10 @@ const problemList = [
   {
     name: "04_Passport_Processing",
     solution: PassportProcessingSolution,
+  },
+  {
+    name: "05_Binary_Boarding",
+    solution: BinaryBoardingSolution,
   },
 ];
 
