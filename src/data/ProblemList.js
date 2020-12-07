@@ -3,6 +3,7 @@ import PasswordPhilosophySolution from "../solutions/02_password_philosophy/Solu
 import TobogganTrajectorySolution from "../solutions/03_toboggan_trajectory/Solution";
 import PassportProcessingSolution from "../solutions/04_passport_processing/Solution";
 import BinaryBoardingSolution from "../solutions/05_binary_boarding/Solution";
+import CustomCustomsSolution from "../solutions/06_custom_customs/Solution";
 
 const problemList = [
   {
@@ -24,6 +25,10 @@ const problemList = [
   {
     name: "05_Binary_Boarding",
     solution: BinaryBoardingSolution,
+  },
+  {
+    name: "06_Custom_Customs",
+    solution: CustomCustomsSolution,
   },
 ];
 
