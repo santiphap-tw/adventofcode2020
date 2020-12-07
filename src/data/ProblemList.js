@@ -4,6 +4,7 @@ import TobogganTrajectorySolution from "../solutions/03_toboggan_trajectory/Solu
 import PassportProcessingSolution from "../solutions/04_passport_processing/Solution";
 import BinaryBoardingSolution from "../solutions/05_binary_boarding/Solution";
 import CustomCustomsSolution from "../solutions/06_custom_customs/Solution";
+import HandyHaversacksSolution from "../solutions/07_handy_haversacks/Solution";
 
 const problemList = [
   {
@@ -29,6 +30,10 @@ const problemList = [
   {
     name: "06_Custom_Customs",
     solution: CustomCustomsSolution,
+  },
+  {
+    name: "07_Handy_Haversacks",
+    solution: HandyHaversacksSolution,
   },
 ];
 
