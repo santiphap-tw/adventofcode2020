@@ -6,6 +6,7 @@ import BinaryBoardingSolution from "../solutions/05_binary_boarding/Solution";
 import CustomCustomsSolution from "../solutions/06_custom_customs/Solution";
 import HandyHaversacksSolution from "../solutions/07_handy_haversacks/Solution";
 import HandheldHaltingSolution from "../solutions/08_handheld_halting/Solution";
+import EncodingErrorSolution from "../solutions/09_encoding_error/Solution";
 
 const problemList = [
   {
@@ -39,6 +40,10 @@ const problemList = [
   {
     name: "08_Handheld_Halting",
     solution: HandheldHaltingSolution,
+  },
+  {
+    name: "09_Encoding_Error",
+    solution: EncodingErrorSolution,
   },
 ];
 
