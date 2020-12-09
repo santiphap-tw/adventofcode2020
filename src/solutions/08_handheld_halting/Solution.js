@@ -32,7 +32,7 @@ const runProgram = (input) => {
 };
 
 const part1 = (input) => {
-  const [acc, isTerminated] = runProgram(input);
+  const [acc] = runProgram(input);
   return acc;
 };
 
