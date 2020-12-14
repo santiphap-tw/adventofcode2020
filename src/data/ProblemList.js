@@ -8,6 +8,9 @@ import HandyHaversacksSolution from "../solutions/07_handy_haversacks/Solution";
 import HandheldHaltingSolution from "../solutions/08_handheld_halting/Solution";
 import EncodingErrorSolution from "../solutions/09_encoding_error/Solution";
 import AdapterArraySolution from "../solutions/10_adapter_array/Solution";
+import SeatingSystemSolution from "../solutions/11_seating_system/Solution";
+import RainRiskSolution from "../solutions/12_rain_risk/Solution";
+import ShuttleSearchSolution from "../solutions/13_shuttle_search/Solution";
 
 const problemList = [
   {
@@ -49,6 +52,18 @@ const problemList = [
   {
     name: "10_Adapter_Array",
     solution: AdapterArraySolution,
+  },
+  {
+    name: "11_Seating_System",
+    solution: SeatingSystemSolution,
+  },
+  {
+    name: "12_Rain_Risk",
+    solution: RainRiskSolution,
+  },
+  {
+    name: "13_Shuttle_Search",
+    solution: ShuttleSearchSolution,
   },
 ];
 
