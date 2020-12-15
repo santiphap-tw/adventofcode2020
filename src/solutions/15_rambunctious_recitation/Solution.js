@@ -58,7 +58,8 @@ const part1 = (input) => {
 };
 
 const part2 = (input) => {
-  return lastPosition(input, 30000000);
+  //return lastPosition(input,30000000);
+  return 0;
 };
 
 const Solution = {
