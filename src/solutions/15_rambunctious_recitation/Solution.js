@@ -38,7 +38,6 @@ const lastPosition = (input, target) => {
     previous = input[pos];
   }
   for (; pos < target; pos++) {
-    if (pos % 100000 === 0) console.log((pos / target) * 100 + "%");
     if (counter[previous].length === 1) {
       previous = 0;
       if (!counter[0]) counter[0] = [pos];
