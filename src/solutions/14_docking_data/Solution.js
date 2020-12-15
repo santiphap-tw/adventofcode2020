@@ -71,13 +71,15 @@ const part2 = (input) => {
       mem[parseInt(target, 2)] = parseInt(value, 2);
     }
   };
-  input.forEach((cmd) => {
+  for (const i in input) {
+    const cmd = input[i];
     const [action, target, value] = getCommand(cmd);
     if (action === "mask") mask = value;
     if (action === "mem") {
+      if (mask.split("X").length > 10) return "Too big!";
       writeMem(maskTarget(target, mask), value);
     }
-  });
+  }
   let sum = 0;
   Object.entries(mem).forEach(([location, value]) => {
     sum += value;
