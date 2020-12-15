@@ -12,6 +12,7 @@ import SeatingSystemSolution from "../solutions/11_seating_system/Solution";
 import RainRiskSolution from "../solutions/12_rain_risk/Solution";
 import ShuttleSearchSolution from "../solutions/13_shuttle_search/Solution";
 import DockingDataSolution from "../solutions/14_docking_data/Solution";
+import RambunctiousRecitationSolution from "../solutions/15_rambunctious_recitation/Solution";
 
 const problemList = [
   {
@@ -69,6 +70,10 @@ const problemList = [
   {
     name: "14_Docking_Data",
     solution: DockingDataSolution,
+  },
+  {
+    name: "15_Rambunctious_Recitation",
+    solution: RambunctiousRecitationSolution,
   },
 ];
 
