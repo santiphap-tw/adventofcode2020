@@ -11,6 +11,7 @@ import AdapterArraySolution from "../solutions/10_adapter_array/Solution";
 import SeatingSystemSolution from "../solutions/11_seating_system/Solution";
 import RainRiskSolution from "../solutions/12_rain_risk/Solution";
 import ShuttleSearchSolution from "../solutions/13_shuttle_search/Solution";
+import DockingDataSolution from "../solutions/14_docking_data/Solution";
 
 const problemList = [
   {
@@ -64,6 +65,10 @@ const problemList = [
   {
     name: "13_Shuttle_Search",
     solution: ShuttleSearchSolution,
+  },
+  {
+    name: "14_Docking_Data",
+    solution: DockingDataSolution,
   },
 ];
 
