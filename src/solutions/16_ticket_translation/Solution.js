@@ -6,8 +6,39 @@ import output02Part1 from "./case02/output.part1.txt";
 import output02Part2 from "./case02/output.part2.txt";
 
 const part1 = (input) => {
-  // Your part 1 solution
-  return 0;
+  input = input.join("\n").split(/\n\s*\n/);
+  const fields = input[0].split("\n");
+  const yourTicket = input[1].split("\n")[1];
+  const otherTickets = input[2].split("\n").slice(1);
+  let rules = [];
+  fields.forEach((field) => {
+    field
+      .split(":")[1]
+      .trim()
+      .split("or")
+      .map((rule) => rule.trim())
+      .forEach((rule) => {
+        const lower = parseInt(rule.split("-")[0]);
+        const upper = parseInt(rule.split("-")[1]);
+        rules.push([lower, upper]);
+      });
+  });
+  let sum = 0;
+  otherTickets
+    .join(",")
+    .split(",")
+    .map((field) => parseInt(field))
+    .forEach((field) => {
+      let valid = false;
+      for (const key in rules) {
+        if (field >= rules[key][0] && field <= rules[key][1]) {
+          valid = true;
+          break;
+        }
+      }
+      if (!valid) sum += field;
+    });
+  return sum;
 };
 
 const part2 = (input) => {
