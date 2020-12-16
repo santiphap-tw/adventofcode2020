@@ -34,7 +34,7 @@ const part2 = (input) => {
     else return gcd(b, a % b, [newS, ...s], [newT, ...t]);
   };
   const firstOccur = (p1, offset1, p2, offset2) => {
-    const [g, s, t] = gcd(p1, p2);
+    const [g, s] = gcd(p1, p2);
     const lcm = (p1 * p2) / g;
     if (offset2 === BigInt(0)) return lcm;
     const range = BigInt(BigInt(offset1) - BigInt(offset2));

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Empty, Fail, Pass } from "../Status/Status";
 import CustomRunPopup from "../CustomRun/CustomRunModal";
 import {

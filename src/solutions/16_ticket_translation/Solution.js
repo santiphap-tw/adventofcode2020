@@ -8,7 +8,7 @@ import output02Part2 from "./case02/output.part2.txt";
 const part1 = (input) => {
   input = input.join("\n").split(/\n\s*\n/);
   const fields = input[0].split("\n");
-  const yourTicket = input[1].split("\n")[1];
+  //const yourTicket = input[1].split("\n")[1];
   const otherTickets = input[2].split("\n").slice(1);
   let rules = [];
   fields.forEach((field) => {
