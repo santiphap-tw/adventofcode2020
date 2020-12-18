@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Empty, Fail, Pass } from "../Status/Status";
 import CustomRunPopup from "../CustomRun/CustomRunModal";
 import {
@@ -30,7 +30,7 @@ const Problem = (props) => {
     );
   };
 
-  const run = async () => {
+  const run = useCallback(() => {
     setResult1(null);
     setResult2(null);
     const execute = async (prob) => {
@@ -68,11 +68,9 @@ const Problem = (props) => {
       }
       return result;
     };
-    const result1 = await execute(solution.part1);
-    const result2 = await execute(solution.part2);
-    setResult1(result1);
-    setResult2(result2);
-  };
+    execute(solution.part1).then((result) => setResult1(result));
+    execute(solution.part2).then((result) => setResult2(result));
+  }, [solution]);
 
   return (
     <tr className="table-bordered border-left-0 border-right-0">
