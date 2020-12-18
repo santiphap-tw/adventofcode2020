@@ -7,7 +7,7 @@ import output02Part2 from "./case02/output.part2.txt";
 
 const spokenValue = (input, target) => {
   input = input[0].split(",").map((i) => parseInt(i.trim()));
-  let counter = {};
+  let counter = new Array(target);
   let pos = 0;
   let previous = 0;
   for (; pos < input.length; pos++) {
