@@ -14,6 +14,7 @@ import ShuttleSearchSolution from "../solutions/13_shuttle_search/Solution";
 import DockingDataSolution from "../solutions/14_docking_data/Solution";
 import RambunctiousRecitationSolution from "../solutions/15_rambunctious_recitation/Solution";
 import TicketTranslationSolution from "../solutions/16_ticket_translation/Solution";
+import ConwayCubesSolution from "../solutions/17_convey_cubes/Solution";
 
 const problemList = [
   {
@@ -79,6 +80,10 @@ const problemList = [
   {
     name: "16_Ticket_Translation",
     solution: TicketTranslationSolution,
+  },
+  {
+    name: "17_Conway_Cubes",
+    solution: ConwayCubesSolution,
   },
 ];
 
