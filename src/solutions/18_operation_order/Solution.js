@@ -5,15 +5,7 @@ import input02 from "./case02/input.txt";
 import output02Part1 from "./case02/output.part1.txt";
 import output02Part2 from "./case02/output.part2.txt";
 
-const popOperator = (operatorStack) => {
-  const lastOpenParen = operatorStack.lastIndexOf("(");
-  return [
-    operatorStack.slice(0, lastOpenParen),
-    operatorStack.slice(lastOpenParen + 1),
-  ];
-};
-
-const evalExp = (stack) => {
+const evalStack = (stack) => {
   let numberStack = [];
   stack.forEach((value) => {
     if (value === "+") {
@@ -31,48 +23,64 @@ const evalExp = (stack) => {
   return numberStack.pop();
 };
 
+const evalExp = (exp, priority) => {
+  exp = exp.split("").filter((value) => value.trim().length > 0);
+  let numberStack = [];
+  let operatorStack = [];
+  exp.forEach((value) => {
+    if (value === "+" || value === "*") {
+      let top = operatorStack.pop();
+      while (top) {
+        if (priority[top] < priority[value]) {
+          operatorStack.push(top);
+          break;
+        }
+        numberStack.push(top);
+        top = operatorStack.pop();
+      }
+      operatorStack.push(value);
+    } else if (value === "(") {
+      operatorStack.push(value);
+    } else if (value === ")") {
+      let top = operatorStack.pop();
+      while (top !== "(") {
+        numberStack.push(top);
+        top = operatorStack.pop();
+      }
+    } else {
+      numberStack.push(value);
+    }
+  });
+  numberStack.push(...operatorStack.reverse());
+  return numberStack;
+};
+
 const part1 = (input) => {
   let answers = [];
+  const priority = {
+    "(": 0,
+    "*": 1,
+    "+": 1,
+  };
   input.forEach((exp) => {
-    exp = exp.split("").filter((value) => value.trim().length > 0);
-    let numberStack = [];
-    let operatorStack = [];
-    exp.forEach((value) => {
-      if (value === "+" || value === "*") {
-        if (operatorStack.length > 0) {
-          if (operatorStack.lastIndexOf("(") !== -1) {
-            let popStack;
-            [operatorStack, popStack] = popOperator(operatorStack);
-            operatorStack.push("(");
-            numberStack.push(...popStack);
-          } else {
-            numberStack.push(...operatorStack);
-            operatorStack = [];
-          }
-        }
-        operatorStack.push(value);
-      } else if (value === "(") {
-        operatorStack.push(value);
-      } else if (value === ")") {
-        let popStack;
-        [operatorStack, popStack] = popOperator(operatorStack);
-        numberStack.push(...popStack);
-      } else {
-        numberStack.push(value);
-      }
-    });
-    numberStack.push(...operatorStack);
-    answers.push(evalExp(numberStack));
-    // console.log(numberStack)
-    // console.log(evalExp(numberStack))
+    const stack = evalExp(exp, priority);
+    answers.push(evalStack(stack));
   });
-  // Your part 1 solution
   return answers.reduce((a, b) => a + b, 0);
 };
 
 const part2 = (input) => {
-  // Your part 2 solution
-  return 0;
+  let answers = [];
+  const priority = {
+    "(": 0,
+    "*": 1,
+    "+": 2,
+  };
+  input.forEach((exp) => {
+    const stack = evalExp(exp, priority);
+    answers.push(evalStack(stack));
+  });
+  return answers.reduce((a, b) => a + b, 0);
 };
 
 const Solution = {
