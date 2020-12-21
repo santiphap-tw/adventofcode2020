@@ -15,6 +15,9 @@ import DockingDataSolution from "../solutions/14_docking_data/Solution";
 import RambunctiousRecitationSolution from "../solutions/15_rambunctious_recitation/Solution";
 import TicketTranslationSolution from "../solutions/16_ticket_translation/Solution";
 import ConwayCubesSolution from "../solutions/17_convey_cubes/Solution";
+import OperationOrderSolution from "../solutions/18_operation_order/Solution";
+import MonsterMessagesSolution from "../solutions/19_monster_messages/Solution";
+import JurassicJigsawSolution from "../solutions/20_jurassic_jigsaw/Solution";
 
 const problemList = [
   {
@@ -84,6 +87,18 @@ const problemList = [
   {
     name: "17_Conway_Cubes",
     solution: ConwayCubesSolution,
+  },
+  {
+    name: "18_Operation_Order",
+    solution: OperationOrderSolution,
+  },
+  {
+    name: "19_Monster_Messages",
+    solution: MonsterMessagesSolution,
+  },
+  {
+    name: "20_Jurassic_Jigsaw",
+    solution: JurassicJigsawSolution,
   },
 ];
 
